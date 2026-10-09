@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Lock in của Bống</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-image: url('chikawa.jpg.jpg');
+           background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {    
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0d1001; /* Điểm nhấn vàng neon */
+            margin-bottom: 30px;
+        }
+
+        /* Lưới hiển thị các ngày trong tuần */
+        .schedule-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Thẻ của từng ngày tập */
+        .day-card {
+            background-color: rgba(28, 28, 30, 0.6); 
+             backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .day-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ccff00;
+            margin-bottom: 5px;
+        }
+
+        .target-muscle {
+            font-size: 13px;
+            color: #f675e2;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Danh sách bài tập có ô Checkbox */
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exercise-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #141418;
+            font-size: 15px;
+        }
+
+        .exercise-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Tùy chỉnh ô Checkbox to, dễ bấm trên điện thoại */
+        .exercise-item input[type="checkbox"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            accent-color: #ccff00; /* Màu khi tích v */
+            cursor: pointer;
+        }
+
+        /* Hiệu ứng gạch ngang và làm mờ bài tập khi đã tích chọn */
+        .exercise-item input[type="checkbox"]:checked + span {
+            text-decoration: line-through;
+            color: #1d1d20;
+        }
+
+        .sets-reps {
+            color: #0b0b0d;
+            font-size: 13px;
+            margin-left: auto; /* Đẩy thông số hiệp về góc bên phải */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lịch Lock in của Bống</h1>
+
+    <div class="schedule-grid">
+
+        <!-- THỨ HAI -->
+        <div class="day-card">
+            <div class="day-header">Thứ Hai</div>
+            <div class="target-muscle">Glute &   Mông</div>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-1">
+                    <span>Kas glute bridge (shortened movement)</span>
+                    <span class="sets-reps">3x8</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-2">
+                    <span>Cable kickback</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-3">
+                    <span>RDLs</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-4">
+                    <span>Hip abduction</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- THỨ BA -->
+        <div class="day-card">
+            <div class="day-header">Thứ Ba</div>
+            <div class="target-muscle">Lưng & Back</div>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-5">
+                    <span>Lat Pulldown</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-6">
+                    <span>Close grip pulldown</span>
+                    <span class="sets-reps">3x8</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-7">
+                    <span>Seated cable row</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox" id="ex-8">
+                    <span>Face pull</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+            </ul>
+        </div>
+
+       <!-- THỨ TƯ (Dạng gạch đầu dòng thuần túy, không có checkbox) -->
+<div class="day-card">
+    <div class="day-header">Thứ Tư</div>
+    <div class="target-muscle">Cardio</div>
+    
+    <ul class="exercise-list">
+        <!-- Bài 1 -->
+        <li class="exercise-item">
+            <span>• Speed 4.3, incline 8.0 </span>
+            <span class="sets-reps">10 Phút</span>
+        </li>
+        
+        <!-- Bài 2 -->
+        <li class="exercise-item">
+            <span>• Speed 4.5, incline 6.0</span>
+            <span class="sets-reps">10 Phút</span>
+        </li>
+        
+        <!-- Bài 3 -->
+        <li class="exercise-item">
+            <span>• Speed 4.7, incline 4.0</span>
+            <span class="sets-reps">10 Phút</span>
+        </li>
+    </ul>
+</div>
+
+
+        <!-- THỨ NĂM -->
+        <div class="day-card">
+            <div class="day-header">Thứ Năm</div>
+            <div class="target-muscle">REST DAYY</div>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <input type="checkbox">
+                    <span>Nếu được hãy đi chơi với Nhật Mông hihi</span>
+                    <span class="sets-reps">100x100</span>
+                </li>
+            </ul>
+        </div>
+ <!-- THỨ SÁU -->
+        <div class="day-card">
+            <div class="day-header">Thứ Sáu</div>
+            <div class="target-muscle">Glute</div>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <input type="checkbox">
+                    <span>Kas glute bridge (shortened movement)</span>
+                    <span class="sets-reps">3x8</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox">
+                    <span>Cable kickback</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox">
+                    <span>RDLs</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+                <li class="exercise-item">
+                    <input type="checkbox">
+                    <span>Hip abduction</span>
+                    <span class="sets-reps">3x10</span>
+                </li>
+            </ul>
+        </div>
+          <!-- THỨ BẢY (Dạng gạch đầu dòng thuần túy, không có checkbox) -->
+<div class="day-card">
+    <div class="day-header">Thứ Bảy</div>
+    <div class="target-muscle">Bơi</div>
+    
+    <ul class="exercise-list">
+        <!-- Bài 1 -->
+        <li class="exercise-item">
+            <span>• Nếu cả tuần em khog bơi được, hãy cố dành ra một hôm để đi bơi nhaa, được thì anh sẽ đi với cunn </span>
+            <span class="sets-reps">45p - 1 tiếng</span>
+        </li>
+    </div>
+<script>
+    // 1. Chọn tất cả các ô checkbox trên trang web
+    const checkboxes = document.querySelectorAll('.exercise-item input[type="checkbox"]');
+
+    // 2. Tự động tải lại trạng thái đã lưu khi bạn Refresh (F5) trang
+    window.addEventListener('load', () => {
+        checkboxes.forEach(checkbox => {
+            if (checkbox.id) { // Chỉ xử lý nếu ô checkbox có id
+                const isChecked = localStorage.getItem(checkbox.id) === 'true';
+                checkbox.checked = isChecked;
+            }
+        });
+    });
+
+    // 3. Lắng nghe sự kiện click để lưu trạng thái vào bộ nhớ máy ngay lập tức
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.id) {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
